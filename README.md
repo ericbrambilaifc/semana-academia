@@ -1,3 +1,2 @@
-# semana-academia
+# semana-academica
 
-kamylla
