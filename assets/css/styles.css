@@ -11,4 +11,33 @@ body {
 
 }
 
+#nav {
+    background-color: #97cadb;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#nav ul li {
+    list-style: none;
+    display: inline;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#nav ul#logo li {
+    float: left;
+    border-radius: 8px;
+}
+
+#nav ul#menu li {
+    float: right;
+    border-radius: 8px;
+}
+
+.clearfix {
+    position: relative;
+    overflow: hidden;
+}
 
