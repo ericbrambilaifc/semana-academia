@@ -15,6 +15,7 @@ body {
     background-color: #97cadb;
     padding-top: 10px;
     padding-bottom: 10px;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.603);
 }
 
 #nav ul li {
@@ -36,9 +37,20 @@ body {
     border-radius: 8px;
 }
 
+#nav ul.right li {
+    float: right;
+}
+
 .clearfix {
     position: relative;
     overflow: hidden;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 #nav ul li a {
@@ -49,7 +61,7 @@ body {
 }
 
 #nav ul#menu li:hover {
-    background-color: #02457a;
+    background-color: #0e4b7c4d;
 }
 
 .container {
@@ -58,4 +70,33 @@ body {
     margin: auto;
 }
 
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 24.99%;}
+.col-4 {width: 33.32%;}
+.col-5 {width: 41.65%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.31%;}
+.col-8 {width: 66.32%;}
+.col-9 {width: 74.97%;}
+.col-10 {width: 83.3%;}
+.col-11 {width: 91.63%;}
+.col-12 {width: 100%;}
+
+
+.main {
+    padding-top: 80px;
+    background-color: #97cadbce;
+    padding-bottom: 80px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#main h1 {
+    color: white;
+}
+
+#main h6 {
+    color: white;
+}
 
