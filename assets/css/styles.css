@@ -7,7 +7,7 @@
 
 body {
     font-family: Poppins;
-    font-size: ;
+    font-size: 18px;
 
 }
 
@@ -40,4 +40,22 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+#nav ul li a {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#nav ul#menu li:hover {
+    background-color: #02457a;
+}
+
+.container {
+    width: 1140px;
+    max-width: 100%;
+    margin: auto;
+}
+
 
