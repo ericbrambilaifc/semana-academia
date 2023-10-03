@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+
+
+    </header>
+
+    <main>
+        <section class="container">
+            <form  id="idForm" action="http://jkorpela.fi/cgi-bin/echo.cgi" method="POST">
+                <fieldset>
+                    <legend>Inscrição</legend>
+                    <div class="input-container">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Nome do aluno" required autofocus>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="matricula">Matrícula</label>
+                        <input type="number" name="matricula" id="matricula" placeholder="Matrícula do aluno" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="CPF" id="cpf" placeholder="CPF do aluno"
+                            pattern="\d{3}.\d{3}.\d{3}-\d{2}" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="emial">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="turma">Turma</label>
+                        <select name="turma" id="turma" required>
+                            <option value="">Selecione</option>
+                            <option value="Informática-1A">Informática 1A</option>
+                            <option value="Informática-1B">Informática 1B</option>
+                            <option value="Informática-2A">Informática 2A</option>
+                            <option value="Informática-2B">Informática 2B</option>
+                            <option value="Informática-3A">Informática 3A</option>
+                            <option value="Informática-3B">Informática 3B</option>
+                            <option value="Ciência-da-Computação">Ciência da Computação</option>
+                        </select>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Limpar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+</body>
+
+</html>

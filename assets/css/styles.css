@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+
+:root{  
+    --shadow:  #97cadb;
+    --grey: #d6e8ee;
+    --white: #fafafa;
+    --blue: #97cadbce;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,12 +20,11 @@ body {
 }
 
 #nav {
-    background-color: #97cadb;
+    background-color: var(--shadow);
     padding-top: 10px;
     padding-bottom: 10px;
-    box-shadow: 8px 8px rgba(0, 0, 0, 0.603);
+    box-shadow: 0px 21px 44px -1px rgba(0,0,0,0.63);
 }
-
 #nav ul li {
     list-style: none;
     display: inline;
@@ -41,6 +48,7 @@ body {
     float: right;
 }
 
+
 .clearfix {
     position: relative;
     overflow: hidden;
@@ -56,7 +64,7 @@ body {
 #nav ul li a {
     padding-left: 10px;
     padding-right: 10px;
-    color: white;
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -86,17 +94,18 @@ body {
 
 .main {
     padding-top: 80px;
-    background-color: #97cadbce;
+    background-color: var(--blue);
     padding-bottom: 80px;
     text-align: center;
     font-size: 30px;
 }
 
 #main h1 {
-    color: white;
+    color: var(--white);
 }
 
 #main h6 {
-    color: white;
+    color: var(--white);
+    font-weight: 400;
 }
 
