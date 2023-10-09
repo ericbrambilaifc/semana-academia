@@ -1,17 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 
-:root{  
-    --shadow:  #97cadb;
+:root {
+    --shadow: #97cadb;
     --grey: #d6e8ee;
     --white: #fafafa;
     --blue: #97cadbce;
+    --fonte-principal: 'Poppins';
 }
 
 * {
     margin: 0;
     padding: 0;
 }
+
+
 
 body {
     font-family: Poppins;
@@ -23,8 +26,9 @@ body {
     background-color: var(--shadow);
     padding-top: 10px;
     padding-bottom: 10px;
-    box-shadow: 0px 21px 44px -1px rgba(0,0,0,0.63);
+    box-shadow: 0px 21px 44px -1px rgba(0, 0, 0, 0.63);
 }
+
 #nav ul li {
     list-style: none;
     display: inline;
@@ -78,18 +82,53 @@ body {
     margin: auto;
 }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 24.99%;}
-.col-4 {width: 33.32%;}
-.col-5 {width: 41.65%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.31%;}
-.col-8 {width: 66.32%;}
-.col-9 {width: 74.97%;}
-.col-10 {width: 83.3%;}
-.col-11 {width: 91.63%;}
-.col-12 {width: 100%;}
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 24.99%;
+}
+
+.col-4 {
+    width: 33.32%;
+}
+
+.col-5 {
+    width: 41.65%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.31%;
+}
+
+.col-8 {
+    width: 66.32%;
+}
+
+.col-9 {
+    width: 74.97%;
+}
+
+.col-10 {
+    width: 83.3%;
+}
+
+.col-11 {
+    width: 91.63%;
+}
+
+.col-12 {
+    width: 100%;
+}
 
 
 .main {
@@ -109,3 +148,98 @@ body {
     font-weight: 400;
 }
 
+.jogos {
+    padding-top: 80px;
+    background-color: var(--white);
+    padding-bottom: 80px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#jogos h1 {
+    color: var(--shadow);
+    font-size: 50px;
+}
+
+#jogos h6 {
+    color: var(--shadow);
+    font-weight: 400;
+}
+
+
+button {
+    font-family: var(--fonte-principal);
+    font-weight: 800;
+    font-size: 18px;
+    width: 200px;
+    height: 3px;
+    padding: 15px;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    border-radius: 150px;
+    background-color: var(--shadow);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+.maratona {
+    padding-top: 80px;
+    background-color: var(--white);
+    padding-bottom: 80px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#maratona h1 {
+    color: var(--shadow);
+    font-size: 50px;
+}
+
+#maratona h6 {
+    color: var(--shadow);
+    font-weight: 400;
+}
+
+#maratona button {
+    margin-top: 30px;
+}
+
+.galeria {
+    padding-top: 80px;
+    background-color: var(--shadow);
+    padding-bottom: 80px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#galeria h1 {
+    color: var(--white);
+    font-size: 50px;
+}
+
+.botao-vertical {
+    transform: rotate(90deg);
+    margin-left: 400px;
+    background-color: var(--white);
+    color: var(--shadow);
+}
+
+h1 {
+    line-height: 1; /* Define line-height como 1 para remover o espaçamento vertical */
+  }
+  
+  /* Definir um valor específico para o espaçamento vertical */
+  h1 {
+    line-height: 1.1; /* Por exemplo, 1.2 vezes o tamanho da fonte */
+  }
+  
+  
+  h1 {
+    line-height: 40px; 
+  }
+   
+.margem {
+    margin-top: 10px;
+}
