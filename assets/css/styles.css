@@ -4,7 +4,7 @@
 :root {
     --shadow: #97cadb;
     --grey: #d6e8ee;
-    --white: #fafafa;
+    --white: #f0f0f0;
     --blue: #97cadbce;
     --fonte-principal: 'Poppins';
 }
@@ -20,6 +20,11 @@ body {
     font-family: Poppins;
     font-size: 18px;
 
+}
+
+a { 
+    text-decoration: none;
+    color: var(--white);
 }
 
 #nav {
