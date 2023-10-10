@@ -73,7 +73,8 @@ body {
 }
 
 #nav ul#menu li:hover {
-    background-color: #0e4b7c4d;
+    background-color: #aad1df;
+    transition: all;
 }
 
 .container {
@@ -252,12 +253,12 @@ input[type="button"]:hover{
 }
 
 h1 {
-    line-height: 1; /* Define line-height como 1 para remover o espaçamento vertical */
+    line-height: 1; 
   }
   
-  /* Definir um valor específico para o espaçamento vertical */
+
   h1 {
-    line-height: 1.1; /* Por exemplo, 1.2 vezes o tamanho da fonte */
+    line-height: 1.1; /
   }
   
   

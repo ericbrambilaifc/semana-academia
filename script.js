@@ -5,6 +5,11 @@ function formatarCPF() {
     document.getElementById("cpf").value = cpf;
 }
 
+function validarEmail(email) {
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
 function validar() {
     var nome = document.getElementById("nome").value;
     var matricula = document.getElementById("matricula").value;
@@ -17,8 +22,8 @@ function validar() {
     } else if (!validarEmail(email)) {
         alert("O endereço de e-mail não é válido.");
     } else {
+
         document.getElementById("idForm").submit();
     }
 }
-
 
