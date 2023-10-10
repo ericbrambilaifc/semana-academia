@@ -17,24 +17,24 @@
 
 
 body {
-    font-family: Poppins;
+    font-family: var(--fonte-principal);
     font-size: 18px;
 
 }
 
-a { 
+a {
     text-decoration: none;
     color: var(--white);
 }
-
-#nav {
+nav {
     background-color: var(--shadow);
     padding-top: 10px;
     padding-bottom: 10px;
     box-shadow: 0px 21px 44px -1px rgba(0, 0, 0, 0.63);
+    font-size: 16px;
 }
 
-#nav ul li {
+nav ul li {
     list-style: none;
     display: inline;
     padding-top: 5px;
@@ -43,17 +43,17 @@ a {
     margin-right: 5px;
 }
 
-#nav ul#logo li {
+nav ul#logo li {
     float: left;
     border-radius: 8px;
 }
 
-#nav ul#menu li {
+nav ul#menu li {
     float: right;
     border-radius: 8px;
 }
 
-#nav ul.right li {
+nav ul.right li {
     float: right;
 }
 
@@ -70,22 +70,26 @@ a {
     clear: both;
 }
 
-#nav ul li a {
+nav ul li a {
     padding-left: 10px;
     padding-right: 10px;
     color: var(--white);
     text-decoration: none;
 }
 
-#nav ul#menu li:hover {
-    background-color: #aad1df;
-    transition: all;
+nav ul#menu li:hover {
+    background-color: #0e4b7c4d;
 }
 
 .container {
     width: 1140px;
     max-width: 100%;
     margin: auto;
+}
+
+[class*="col-"] {
+    float: left;
+    padding-right: 5px;
 }
 
 .col-1 {
@@ -145,11 +149,11 @@ a {
     font-size: 30px;
 }
 
-#main h1 {
+.main h1 {
     color: var(--white);
 }
 
-#main h6 {
+.main h6 {
     color: var(--white);
     font-weight: 400;
 }
@@ -162,12 +166,12 @@ a {
     font-size: 30px;
 }
 
-#jogos h1 {
+.jogos h1 {
     color: var(--shadow);
     font-size: 50px;
 }
 
-#jogos h6 {
+.jogos h6 {
     color: var(--shadow);
     font-weight: 400;
 }
@@ -190,31 +194,6 @@ button {
     border: none;
 }
 
-input[type="button"] {
-    font-family: var(--fonte-principal);
-    font-weight: 800;
-    font-size: 18px;
-    width: 200px;
-    height: 3px;
-    padding: 15px;
-    padding-top: 5px;
-    padding-bottom: 30px;
-    border-radius: 150px;
-    background-color: var(--shadow);
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-}
-
-button:hover {
-    background-color: var(--blue);
-}
-
-input[type="button"]:hover{    
-    background-color: var(--blue);
-}
-
 .maratona {
     padding-top: 80px;
     background-color: var(--white);
@@ -223,17 +202,17 @@ input[type="button"]:hover{
     font-size: 30px;
 }
 
-#maratona h1 {
+.maratona h1 {
     color: var(--shadow);
     font-size: 50px;
 }
 
-#maratona h6 {
+.maratona h6 {
     color: var(--shadow);
     font-weight: 400;
 }
 
-#maratona button {
+.maratona button {
     margin-top: 30px;
 }
 
@@ -245,9 +224,10 @@ input[type="button"]:hover{
     font-size: 30px;
 }
 
-#galeria h1 {
+.galeria h1 {
     color: var(--white);
     font-size: 50px;
+    padding: 25px;
 }
 
 .botao-vertical {
@@ -258,19 +238,44 @@ input[type="button"]:hover{
 }
 
 h1 {
-    line-height: 1; 
-  }
-  
+    line-height: 1;
+    line-height: 40px;
+    line-height: 1.1;
+}
 
-  h1 {
-    line-height: 1.1; /
-  }
-  
-  
-  h1 {
-    line-height: 40px; 
-  }
-   
 .margem {
     margin-top: 10px;
 }
+
+footer {
+    padding-top: 40px;
+    background-color: var(--shadow);
+    color: var(--white);
+    text-align: center;
+
+}
+
+
+.rodape {
+    font-size: 15px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.apoiadores {
+    background-color: var(--white);
+    padding-top: 40px;
+    padding-bottom: 80px;
+    text-align: center;
+    font-size: 30px;
+    color: var(--shadow);
+}
+
+.logo {
+    display: inline-block;
+    width: 300px;
+    margin: 1%;
+    align-items: center;
+
+}
+
