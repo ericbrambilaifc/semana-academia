@@ -184,6 +184,31 @@ button {
     border: none;
 }
 
+input[type="button"] {
+    font-family: var(--fonte-principal);
+    font-weight: 800;
+    font-size: 18px;
+    width: 200px;
+    height: 3px;
+    padding: 15px;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    border-radius: 150px;
+    background-color: var(--shadow);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--blue);
+}
+
+input[type="button"]:hover{    
+    background-color: var(--blue);
+}
+
 .maratona {
     padding-top: 80px;
     background-color: var(--white);
