@@ -3,7 +3,7 @@
 
 :root {
     --shadow: #97cadb;
-    --grey: #d6e8ee;
+    --grey: #e7e7e7d5;
     --white: #f0f0f0;
     --blue: #97cadbce;
     --fonte-principal: 'Poppins';
@@ -218,7 +218,7 @@ button {
 
 .galeria {
     padding-top: 80px;
-    background-color: var(--shadow);
+    background-color: var(--blue);
     padding-bottom: 80px;
     text-align: center;
     font-size: 30px;
@@ -230,6 +230,10 @@ button {
     padding: 25px;
 }
 
+.acessar {
+    background-color: var(--white);
+    color: var(--shadow);
+}
 .botao-vertical {
     transform: rotate(90deg);
     margin-left: 400px;
@@ -248,18 +252,24 @@ h1 {
 }
 
 footer {
+
     padding-top: 40px;
-    background-color: var(--shadow);
+    background-color: var(--blue);
     color: var(--white);
     text-align: center;
 
+}
+
+#direita {
+    float: right;
 }
 
 
 .rodape {
     font-size: 15px;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
+    margin-left: 10px;
 }
 
 .apoiadores {
@@ -279,3 +289,32 @@ footer {
 
 }
 
+.cronograma {
+    padding-top: 40px;
+    color: var(--white);
+    background-color: var(--blue);
+    padding-bottom: 200px;
+    text-align: center;
+    font-size: 30px;
+}
+.cronograma h1 {
+    padding-bottom: 50px;
+}
+
+.titulo {
+    background-color: var(--white);
+    color: var(--shadow);
+    border-radius: 10px;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 180px ;
+}
+
+ .dia {
+    font-size: 15px;
+    color: var(--shadow);
+    background-color: var(--grey);
+    width: 280px;
+    border-radius: 10px;
+ }
