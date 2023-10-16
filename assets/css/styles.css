@@ -177,7 +177,7 @@ nav ul#menu li:hover {
 }
 
 
-button {
+ button {
     font-family: var(--fonte-principal);
     font-weight: 800;
     font-size: 18px;
@@ -318,3 +318,103 @@ footer {
     width: 280px;
     border-radius: 10px;
  }
+
+ .navs {
+    background-color: var(--white);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 21px 44px -1px rgba(0, 0, 0, 0.63);
+    font-size: 16px;
+}
+
+.navs ul li {
+    list-style: none;
+    display: inline;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.navs ul#logo li {
+    float: left;
+    border-radius: 8px;
+}
+
+.navs ul#menu li {
+    float: right;
+    border-radius: 8px;
+}
+
+.navs ul.right li {
+    float: right;
+}
+
+.navs ul li a {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--shadow);
+    text-decoration: none;
+}
+
+.navs ul#menu li:hover {
+    background-color: #0e4b7c4d;
+}
+
+form {
+    overflow: hidden;
+}
+
+.logo {
+    float: left;
+}
+
+form fieldset {
+    background-color: var(--blue);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 200px;
+    padding-right: 5px;
+}
+
+.input-container {
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    padding-right: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    color: var(--shadow);
+    background-color: var(--white);
+}
+
+::placeholder {
+    
+    color: var(--shadow);
+}
+
+.actions button {
+    font-family: var(--fonte-principal);
+    font-weight: 800;
+    font-size: 18px;
+    width: 150px;
+    height: 3px;
+    padding: 15px;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    border-radius: 150px;
+    background-color: var(--shadow);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    margin-top: 70px;
+}
