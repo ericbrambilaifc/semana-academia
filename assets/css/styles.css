@@ -389,7 +389,9 @@ input[type="text"],
 input[type="email"],
 input[type="number"],
 select {
-    width: 50%;
+    margin-top: 38px;
+    float: right;
+    width: 40%;
     padding: 10px;
     border: none;
     color: var(--shadow);
