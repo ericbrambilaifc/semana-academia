@@ -2,6 +2,7 @@ git init
     <!DOCTYPE html>
     <html lang="pt-br">
 
+<<<<<<< HEAD
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,9 +31,38 @@ git init
                         </li>
                     </ul>
                 </div>
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição</title>
+    <link rel="shortcut icon" href="assets/img/logo sci.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="navs" class="navs">
+            <div class="container clearfix">
+                <ul id="logo">
+                    <li>
+                        <a href="inicio">VIII-SCI</a>
+                    </li>
+                </ul>
+                <ul id="menu">
+                    <li><a href="#maratona">Maratona</a></li>
+                    <li><a href="#jogos">Jogos Eletrônicos</a></li>
+                    <li><a href="#cronograma">Cronograma</a></li>
+                    <li><a href="#fotos">Fotos</a></li>
+                    <li><a href="#inscricao">Inscreva-se</a></li>
+                    <li><a href="#colaboradores">Colaboradores</a></li>
+
+                </ul>
+>>>>>>> refs/remotes/origin/main
             </div>
         </header>
 
+<<<<<<< HEAD
         <main>
             <section class="container">
                 <form id="idForm" action="http://jkorpela.fi/cgi-bin/echo.cgi" method="POST">
@@ -81,7 +111,89 @@ git init
                 </form>
             </section>
         </main>
+=======
+    <main>
+        <center>
+            <section class="container">
+                <form id="idForm" action="http://jkorpela.fi/cgi-bin/echo.cgi" method="POST">
+                    <fieldset>
+                        <div class="logo">
+                            <img src="assets/img/logo sci.png" alt="logo da semana acadêmica" width="400px">
+                        </div>
+                        <div class="input-container">
 
+                            <input type="text" name="nome" id="nome" placeholder="nome do aluno" required autofocus>
+                        </div>
+                        <div class="input-container">
+
+                            <input type="number" name="matricula" id="matricula" placeholder="matrícula do aluno"
+                                required maxlength="12">
+                        </div>
+                        <div class="input-container">
+
+                            <input type="text" id="cpf" oninput="formatarCPF()" maxlength="14"
+                                placeholder="CPF" required>
+                        </div>
+                        <div class="input-container">
+
+                            <input type="email" id="email" name="email" placeholder="e-mail" required>
+                        </div>
+                        <div class="input-container">
+                            <select name="turma" id="turma" required>
+                                <option value="">turma</option>
+                                <option value="Informática-1A">Informática 1A</option>
+                                <option value="Informática-1B">Informática 1B</option>
+                                <option value="Informática-2A">Informática 2A</option>
+                                <option value="Informática-2B">Informática 2B</option>
+                                <option value="Informática-3A">Informática 3A</option>
+                                <option value="Informática-3B">Informática 3B</option>
+                                <option value="Ciência-da-Computação">Ciência da Computação</option>
+                            </select>
+                        </div>
+
+                    </fieldset>
+                    <div class="actions">
+                        <button type="submit" onclick="validar()"> Enviar</button>
+                        <button type="reset">Limpar</button>
+                        <button><a href="index.html">Voltar</a></button>
+                    </div>
+                </form>
+            </section>
+        </center>
+    </main> 
+    <footer>
+        <div class="container clearfix">
+>>>>>>> refs/remotes/origin/main
+
+            <div class="col-4">
+                <h2>Realização</h2>
+                <img src="assets/img/logo-ifc.png" alt="logo ifc" width="300px">
+            </div>
+
+            <div class="col-4">
+                <h2>Endereço</h2>
+                <p>Rodovia SC 135, km 125 <br>
+
+                    Bairro Campo Experimental <br>
+
+                    CEP 89564-590 - Videira - SC<br>
+                </p>
+            </div>
+
+            <div id="direita" class="col-4">
+                <h2>Contato</h2>
+                <p>Fone: (49) 3533-4900</p>
+            </div>
+
+        </div>
+        <div class="container clearfix">
+
+            <div class="rodape">
+                <p>&copy; 2023 | Desenvolvido por Eric Brambila, Izabelly Coser e Kamylla Abraão</p>
+            </div>
+
+        </div>
+    </footer>
 
     </body>
     <script src="script.js"></script>
