@@ -1,20 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="VII-SCI">
-    <meta name="keywords" content="informática, ifc, computação, semana acadêmica, jogos">
-    <meta name="author" content="Eric Brambila, Izabelly Coser, Kamylla Abraão">
-    <link rel="shortcut icon" href="assets/img/logo_semana.png">
-    <link rel="stylesheet" href="assets/css/style-orcamento.css">
-    <title>Orçamento</title>
-</head>
-<body>
-    <h3>Itens de Divulgação</h3>
+<html>
 
-    <table> 
-        
-    </table>
+<head>
+    <title>Calculadora de Orçamento para o Evento</title>
+</head>
+
+<body>
+    <h1>Calculadora de Orçamento para o Evento SCI</h1>
+    <h2>Dados do Evento</h2>
+
+    <label>Número de Participantes</label><input type="text" required>
+
+    <div class="alimenticios">
+        <h3>Custo de Produtos Alimentícios</h3>
+        <table>
+            <tr>
+                <th>Nome do Produto</th>
+                <th>Quantidade por Participante</th>
+                <th>Preço por Unidade</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>Café</td>
+                <td><input type="number" id="quantidade" min="0" required></td>     <!--o min é usado para nao inserir numeros negativos-->
+                <td><input type="number" id="preco" min="0" required></td>
+            </tr>
+            <tr>
+                <td>Bolo</td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+                <td><input type="number" id="preco" min="0" required></td>
+            </tr>
+            <tr>
+                <td>Cachorro-Quente</td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+                <td><input type="number" id="preco" min="0" required></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="divulgacao">
+        <h3>Custos de Divulgação</h3>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Quantidade por Participante</th>
+                <th>Preço por Unidade</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>Banner</td>
+                <td><input type="number" id="banner" min="0" required></td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+            </tr>
+            <tr>
+                <td>Crachá</td>
+                <td><input type="numer" id="cracha" min="0" required></td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+            </tr>
+            <tr>
+                <td>Camiseta</td>
+                <td><input type="numer" id="camiseta" min="0" required></td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+            </tr>
+        </table>
+
+        <button type="submit">Salvar Dados</button>
+    </div>
+
+    <div class="totais">    
+        <h3>Custos Totais</h3>
+
+        <table> 
+            <tr>    
+                <th>Tipo</th>
+                <th>Total</th>
+            </tr>
+            <tr>    
+                <td>Produtos Alimenticios</td>
+                <td>Divulgação</td>
+                <td>Custo Total do Evento</td>
+            </tr>
+        </table>
+        <button type="submit">Calcular Orçamento</button>
+        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        <button type="submit">Montar e Eviar Dados por Email</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

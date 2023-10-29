@@ -7,7 +7,33 @@
     <title>Inscrição</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+<script>    
+    document.getElementById('eventForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    // Recuperar o número de participantes do localStorage
+    var numParticipants = localStorage.getItem('total_inscritos');
+
+    // Capturar os valores inseridos pelo usuário nos campos do formulário
+    var coffeeQty = document.getElementById('coffeeQty').value;
+    var coffeePrice = document.getElementById('coffeePrice').value;
+    var cakeQty = document.getElementById('cakeQty').value;
+    var cakePrice = document.getElementById('cakePrice').value;
+    var hotdogQty = document.getElementById('hotdogQty').value;
+    var hotdogPrice = document.getElementById('hotdogPrice').value;
+    var bannersQty = document.getElementById('bannersQty').value;
+    var bannersPrice = document.getElementById('bannersPrice').value;
+
+    // Calcular o custo total dos produtos alimentícios e dos itens de divulgação
+    var totalFoodCost = (coffeeQty * coffeePrice) + (cakeQty * cakePrice) + (hotdogQty * hotdogPrice);
+    var totalPromoCost = bannersQty * bannersPrice; // Adicione os custos de crachás e camisetas
+    var totalCost = totalFoodCost + totalPromoCost;
+
+    // Exibir o custo total na página de forma clara e destacada
+    alert('O custo total do evento é: ' + totalCost);
+});
+
+</script>
 <body>
     <header>
         <div id="navs" class="navs">
@@ -33,7 +59,7 @@
     <main>
         <center>
             <section class="container">
-                <form id="idForm" action="http://jkorpela.fi/cgi-bin/echo.cgi" method="POST">
+                <form id="idForm" action="http://jkorpela.fi/cgi-bin/echo.cgi" target="_blank" method="POST">
                     <fieldset>
                         <div class="logo">
                             <img src="assets/img/logo sci.png" alt="logo da semana acadêmica" width="400px">
