@@ -169,13 +169,8 @@ nav ul#menu li:hover {
 .jogos h1 {
     color: var(--shadow);
     font-size: 50px;
+    padding-bottom: 20px;
 }
-
-.jogos h6 {
-    color: var(--shadow);
-    font-weight: 400;
-}
-
 
  button {
     font-family: var(--fonte-principal);
@@ -422,4 +417,5 @@ select {
     margin-top: 70px;
     margin-bottom: 50px ;
 }
+
 
