@@ -214,6 +214,7 @@ nav ul#menu li:hover {
 .galeria {
     padding-top: 80px;
     background-color: var(--blue);
+    color: var(--white);
     padding-bottom: 80px;
     text-align: center;
     font-size: 30px;
