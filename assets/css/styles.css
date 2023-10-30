@@ -418,4 +418,15 @@ select {
     margin-bottom: 50px ;
 }
 
+.informacoes {    
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15rem 1.2rem 9rem;
+    text-align: center;
+}
 
+
+.logo-apoiador {   
+    display: inline;
+    margin: 0 2rem;
+}
