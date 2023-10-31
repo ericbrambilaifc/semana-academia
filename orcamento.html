@@ -7,10 +7,8 @@
     <meta name="description" content="VII-SCI">
     <meta name="keywords" content="informática, ifc, computação, semana acadêmica, jogos">
     <meta name="author" content="Eric Brambila, Izabelly Coser, Kamylla Abraão">
-    <link rel="shortcut icon" href="assets/img/logo sci.png">
-    <link rel="stylesheet" href="">
-    <title>Orçamento</title>
-</head>
+    <link rel="shortcut icon" href="assets/img/logo_sci.png">
+    <link rel="stylesheet" href="assets/css/orcamento.css">
     <title>Calculadora de Orçamento para o Evento</title>
 </head>
 
@@ -18,7 +16,10 @@
     <h1>Calculadora de Orçamento para o Evento SCI</h1>
     <h2>Dados do Evento</h2>
 
-    <label>Número de Participantes</label><input type="text" required>
+    <label for="numeroParticipantes">Número de Participantes</label>
+    <input type="number" id="numeroParticipantes" min="0" required>
+    <button onclick="adicionarParticipante()">Adicionar Participante</button>
+    <p>Número total de participantes: <span id="numeroParticipantesDisplay">0</span></p>
 
     <div class="alimenticios">
         <h3>Custo de Produtos Alimentícios</h3>
@@ -31,22 +32,21 @@
             </tr>
             <tr>
                 <td>Café</td>
-                <td><input type="number" id="quantidade" name="cafe" min="0" required></td>     <!--o min é usado para nao inserir numeros negativos-->
-                <td><input type="number" id="preco" name="cafe" min="0" required></td>
-                <td><input type="number" id="total-cafe" name="cafe" min="0" required></td>
-
+                <td><input type="number" id="quantidadeCafe" name="cafe" min="0" required></td>
+                <td><input type="number" id="precoCafe" name="cafe" min="0" required></td>
+                <td><input type="number" id="totalCafe" name="cafe" min="0" required></td>
             </tr>
             <tr>
                 <td>Bolo</td>
-                <td><input type="number" id="quantidade" name="" min="0" required></td>
-                <td><input type="number" id="preco" name="" min="0" required></td>
-                <td><input type="number" id="total-bolo" name="" min="0" required></td>
+                <td><input type="number" id="quantidadeBolo" name="bolo" min="0" required></td>
+                <td><input type="number" id="precoBolo" name="bolo" min="0" required></td>
+                <td><input type="number" id="totalBolo" name="bolo" min="0" required></td>
             </tr>
             <tr>
                 <td>Cachorro-Quente</td>
-                <td><input type="number" id="quantidade" name="" min="0" required></td>
-                <td><input type="number" id="preco" name="" min="0" required></td>
-                <td><input type="number" id="total-cachorro" name="" min="0" required></td>
+                <td><input type="number" id="quantidadeCachorro" name="cachorro" min="0" required></td>
+                <td><input type="number" id="precoCachorro" name="cachorro" min="0" required></td>
+                <td><input type="number" id="totalCachorro" name="cachorro" min="0" required></td>
             </tr>
         </table>
     </div>
@@ -62,41 +62,50 @@
             </tr>
             <tr>
                 <td>Banner</td>
-                <td><input type="number" id="banner" min="0" required></td>
-                <td><input type="number" id="quantidade" min="0" required></td>
+                <td><input type="number" id="quantidadeBanner" name="banner" min="0" required></td>
+                <td><input type="number" id="precoBanner" name="banner" min="0" required></td>
+                <td><input type="number" id="totalBanner" name="banner" min="0" required></td>
             </tr>
             <tr>
                 <td>Crachá</td>
-                <td><input type="numer" id="cracha" min="0" required></td>
-                <td><input type="number" id="quantidade" min="0" required></td>
+                <td><input type="number" id="quantidadeCracha" name="cracha" min="0" required></td>
+                <td><input type="number" id="precoCracha" name="cracha" min="0" required></td>
+                <td><input type="number" id="totalCracha" name="cracha" min="0" required></td>
             </tr>
             <tr>
                 <td>Camiseta</td>
-                <td><input type="numer" id="camiseta" min="0" required></td>
-                <td><input type="number" id="quantidade" min="0" required></td>
+                <td><input type="number" id="quantidadeCamiseta" name="camiseta" min="0" required></td>
+                <td><input type="number" id="precoCamiseta" name="camiseta" min="0" required></td>
+                <td><input type="number" id="totalCamiseta" name="camiseta" min="0" required></td>
             </tr>
         </table>
 
-        <button type="submit">Salvar Dados</button>
+        <button onclick="salvarDados()">Salvar Dados</button>
     </div>
 
-    <div class="totais">    
+    <div class="totais">
         <h3>Custos Totais</h3>
-
-        <table> 
-            <tr>    
+        <table>
+            <tr>
                 <th>Tipo</th>
                 <th>Total</th>
             </tr>
-            <tr>    
-                <td>Produtos Alimenticios</td>
+            <tr>
+                <td>Produtos Alimentícios</td>
+                <td id="totalAlimenticios">0</td>
+            </tr>
+            <tr>
                 <td>Divulgação</td>
+                <td id="totalDivulgacao">0</td>
+            </tr>
+            <tr>
                 <td>Custo Total do Evento</td>
+                <td id="custoTotalEvento">0</td>
             </tr>
         </table>
-        <button type="submit">Calcular Orçamento</button>
-        <textarea name="text" id="text" cols="30" rows="10"></textarea>
-        <button type="submit">Montar e Eviar Dados por Email</button>
+        <button type="button" onclick="calcularOrcamento()">Calcular Orçamento</button>
+        <textarea name="text" id="text" cols="200" rows="10"></textarea>
+        <button type="button" onclick="enviarDadosPorEmail()">Montar e Enviar Dados por Email</button>
     </div>
 
     <script src="script-orcamento.js"></script>
