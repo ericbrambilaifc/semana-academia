@@ -245,7 +245,7 @@ h1 {
 }
 
 footer {
-
+    display: inline;
     padding-top: 40px;
     background-color: var(--blue);
     color: var(--white);
@@ -283,6 +283,7 @@ footer {
 }
 
 .cronograma {
+    display: inline;
     padding-top: 40px;
     color: var(--white);
     background-color: var(--blue);
