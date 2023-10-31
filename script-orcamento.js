@@ -1,28 +1,41 @@
 function salvarDados() {
-    let numeroParticipantes = parseInt(localStorage.getItem('numeroParticipantes')) || 0;
-  
     const numeroParticipantesInput = document.getElementById('numeroParticipantes');
     const numeroParticipantesValue = parseInt(numeroParticipantesInput.value);
   
     if (!isNaN(numeroParticipantesValue)) {
-      numeroParticipantes += numeroParticipantesValue;
+      const numeroParticipantes = (parseInt(localStorage.getItem('numeroParticipantes')) || 0) + numeroParticipantesValue;
       localStorage.setItem('numeroParticipantes', numeroParticipantes);
   
-      const numeroParticipantesDisplay = document.getElementById('numeroParticipantesDisplay');
-      numeroParticipantesDisplay.textContent = 'Número total de participantes: ' + numeroParticipantes;
+      document.getElementById('numeroParticipantesDisplay').textContent = 'Número total de participantes: ' + numeroParticipantes;
   
-      numeroParticipantesInput.value = '';   //limpa o campo de entrada
+      numeroParticipantesInput.value = '';
     } else {
       alert('Por favor, insira um número válido.');
     }
   }
-
+  
   function adicionarParticipante() {
     const numeroParticipantesInput = document.getElementById('numeroParticipantes');
     const numeroParticipantesValue = parseInt(numeroParticipantesInput.value);
   
-    const numeroParticipantesDisplay = document.getElementById('numeroParticipantesDisplay');
-    numeroParticipantesDisplay.textContent =  + numeroParticipantesValue;
+    if (!isNaN(numeroParticipantesValue)) {
+      const numeroParticipantes = parseInt(localStorage.getItem('numeroParticipantes')) || 0;
+      const novoNumeroParticipantes = numeroParticipantes + numeroParticipantesValue;
   
-    numeroParticipantesInput.value = '';
+      localStorage.setItem('numeroParticipantes', novoNumeroParticipantes);
+  
+      document.getElementById('numeroParticipantesDisplay').textContent = novoNumeroParticipantes;
+  
+      numeroParticipantesInput.value = '';
+    } else {
+      alert('Por favor, insira um número válido.');
+    }
   }
+  
+  window.onload = function() {
+    const numeroParticipantes = localStorage.getItem('numeroParticipantes');
+    if (numeroParticipantes !== null) {
+      document.getElementById('numeroParticipantesDisplay').textContent = numeroParticipantes;
+    }
+  }
+   
