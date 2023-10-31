@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +10,16 @@
     <link rel="stylesheet" href="assets/css/orcamento.css">
     <title>Calculadora de Orçamento para o Evento</title>
 </head>
-
 <body>
     <div class="container clearfix">
         <div class="top">
             <h1>Calculadora de Orçamento para o Evento SCI</h1>
             <h2>Dados do Evento</h2>
-
             <label for="numeroParticipantes">Número de Participantes</label>
             <input type="number" id="numeroParticipantes" min="0" required>
             <button onclick="adicionarParticipante()">Adicionar Participante</button>
             <p>Número total de participantes: <span id="numeroParticipantesVizualizacao"><b>0</b></span></p>
         </div>
-
         <div class="alimenticios">
             <h3>Custo de Produtos Alimentícios</h3>
             <table>
@@ -53,7 +49,6 @@
                 </tr>
             </table>
         </div>
-
         <div class="divulgacao">
             <h3>Custos de Divulgação</h3>
             <table>
@@ -82,10 +77,8 @@
                     <td><input type="number" id="totalCamiseta" name="camiseta" min="0" required></td>
                 </tr>
             </table>
-
-            <button onclick="dadosGuardados()">Salvar Dados</button> 
+            <button onclick="adicionarDados()">Salvar Dados</button>
         </div>
-
         <div class="totais">
             <h3>Custos Totais</h3>
             <table>
@@ -106,8 +99,8 @@
                     <td id="custoTotalEvento">0</td>
                 </tr>
             </table>
-            <button type="button" onclick="calcularOrcamento()">Calcular Orçamento</button>
-            <textarea name="text" id="text" cols="150" rows="10"></textarea>
+            <button type="button" onclick="calcularTotais()">Calcular Orçamento</button>
+            <textarea id="dadosGuardadosDisplay" cols="150" rows="10"></textarea>
             <button type="button" onclick="enviarDadosPorEmail()">Montar e Enviar Dados por Email</button>
             <button><a href="index.html">Voltar</a></button>
         </div>
@@ -115,5 +108,4 @@
     <div class="ghost"></div>
     <script src="script-orcamento.js"></script>
 </body>
-
 </html>

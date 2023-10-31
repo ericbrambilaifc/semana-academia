@@ -95,35 +95,153 @@ calcularTotal('quantidadeCamiseta', 'precoCamiseta', 'totalCamiseta');
 // Crie um array vazio para armazenar os dados
 const dadosGuardados = [];
 
-// Função para salvar os dados quando o botão é clicado
-function dadosGuardados() {
-  // Obtenha os valores dos campos
-  const quantidadeCafe = parseFloat(document.getElementById('quantidadeCafe').value) || 0;
-  const precoCafe = parseFloat(document.getElementById('precoCafe').value) || 0;
-  const totalCafe = parseFloat(document.getElementById('totalCafe').value) || 0;
+function adicionarParticipante() {
+    const totalInscritosInput = document.getElementById('numeroParticipantes');
+    const totalInscritosValue = parseInt(totalInscritosInput.value);
 
-  // Crie um objeto com os dados
-  const dados = {
-    nomeProduto: 'Café',
-    quantidade: quantidadeCafe,
-    preco: precoCafe,
-    total: totalCafe,
-  };
+    if (!isNaN(totalInscritosValue)) {
+        const totalInscritos = (parseInt(localStorage.getItem('totalInscritos')) || 0) + totalInscritosValue;
+        localStorage.setItem('totalInscritos', totalInscritos);
 
-  // Adicione o objeto ao array
-  dadosGuardados.push(dados);
+        document.getElementById('numeroParticipantesVizualizacao').textContent = totalInscritos;
 
-  // Limpe os campos após salvar os dados
-  document.getElementById('quantidadeCafe').value = '';
-  document.getElementById('precoCafe').value = '';
-  document.getElementById('totalCafe').value = '';
-
-  // Você pode exibir os dados salvos em uma área na página se desejar
-  exibirDadosGuardados();
+        totalInscritosInput.value = '';
+    } else {
+        alert('Por favor, insira um número válido.');
+    }
 }
 
-// Função para exibir os dados salvos em uma área na página
+function adicionarDados() {
+    const produtos = ['Cafe', 'Bolo', 'Cachorro', 'Banner', 'Cracha', 'Camiseta'];
+
+    produtos.forEach((produto) => {
+        const quantidade = parseFloat(document.getElementById(`quantidade${produto}`).value) || 0;
+        const preco = parseFloat(document.getElementById(`preco${produto}`).value) || 0;
+        const total = quantidade * preco;
+        
+        console.log(`Quantidade de ${produto}: ${quantidade}`);
+        console.log(`Preço de ${produto}: ${preco}`);
+        console.log(`Total de ${produto}: ${total}`);
+        
+        const dados = {
+            produto,
+            quantidade,
+            preco,
+            total
+        };
+        
+        dadosGuardados.push(dados);
+        
+        document.getElementById(`quantidade${produto}`).value = '';
+        document.getElementById(`preco${produto}`).value = '';
+        document.getElementById(`total${produto}`).value = '';
+    });
+
+    exibirDadosGuardados();
+}
+
 function exibirDadosGuardados() {
-  const dadosGuardadosDisplay = document.getElementById('dadosGuardadosDisplay');
-  dadosGuardadosDisplay.textContent = JSON.stringify(dadosGuardados, null, 2);
+    const dadosGuardadosDisplay = document.getElementById('dadosGuardadosDisplay');
+    dadosGuardadosDisplay.textContent = JSON.stringify(dadosGuardados, null, 2);
+}
+
+function calcularOrcamento() {
+    function calcularTotal(quantidade, preco, total) {
+  const quantidadeInput = document.getElementById(quantidade);
+  const precoInput = document.getElementById(preco);
+  const totalInput = document.getElementById(total);
+
+  quantidadeInput.addEventListener('input', () => {
+    const quantidade = parseFloat(quantidadeInput.value) || 0;
+    const preco = parseFloat(precoInput.value) || 0;
+    const novoTotal = quantidade * preco;
+    totalInput.value = novoTotal;
+
+    // Chame a função para calcular e atualizar os totais
+    calcularTotais();
+  });
+
+  precoInput.addEventListener('input', () => {
+    const quantidade = parseFloat(quantidadeInput.value) || 0;
+    const preco = parseFloat(precoInput.value) || 0;
+    const novoTotal = quantidade * preco;
+    totalInput.value = novoTotal;
+
+    // Chame a função para calcular e atualizar os totais
+    calcularTotais();
+  });
+}
+
+function calcularTotais() {
+  const totaisProdutos = ['totalCafe', 'totalBolo', 'totalCachorro'];
+  const totaisDivulgacao = ['totalBanner', 'totalCracha', 'totalCamiseta'];
+
+  let totalProdutos = 0;
+  let totalDivulgacao = 0;
+
+  // Calcule o total para os produtos alimentícios
+  totaisProdutos.forEach((total) => {
+    totalProdutos += parseFloat(document.getElementById(total).value) || 0;
+  });
+
+  // Calcule o total para os custos de divulgação
+  totaisDivulgacao.forEach((total) => {
+    totalDivulgacao += parseFloat(document.getElementById(total).value) || 0;
+  });
+
+  const totalEvento = totalProdutos + totalDivulgacao;
+
+  // Atualize os campos de "Total" na tabela de Custos Totais
+  document.getElementById('totalAlimenticios').textContent = totalProdutos.toFixed(2);
+  document.getElementById('totalDivulgacao').textContent = totalDivulgacao.toFixed(2);
+  document.getElementById('custoTotalEvento').textContent = totalEvento.toFixed(2);
+}
+
+// Chame a função para calcular o total para cada item da tabela
+calcularTotal('quantidadeCafe', 'precoCafe', 'totalCafe');
+calcularTotal('quantidadeBolo', 'precoBolo', 'totalBolo');
+calcularTotal('quantidadeCachorro', 'precoCachorro', 'totalCachorro');
+calcularTotal('quantidadeBanner', 'precoBanner', 'totalBanner');
+calcularTotal('quantidadeCracha', 'precoCracha', 'totalCracha');
+calcularTotal('quantidadeCamiseta', 'precoCamiseta', 'totalCamiseta');
+
+// Chame a função para calcular e atualizar os totais iniciais
+calcularTotais();
+
+}
+
+//----------------------------------------------------
+
+function calcularTotais() {
+  const totaisProdutos = ['totalCafe', 'totalBolo', 'totalCachorro'];
+  const totaisDivulgacao = ['totalBanner', 'totalCracha', 'totalCamiseta'];
+
+  let totalProdutos = 0;
+  let totalDivulgacao = 0;
+
+  // Calcule o total para os produtos alimentícios
+  totaisProdutos.forEach((total) => {
+    totalProdutos += parseFloat(document.getElementById(total).value) || 0;
+  });
+
+  // Calcule o total para os custos de divulgação
+  totaisDivulgacao.forEach((total) => {
+    totalDivulgacao += parseFloat(document.getElementById(total).value) || 0;
+  });
+
+  const totalEvento = totalProdutos + totalDivulgacao;
+
+  // Atualize os campos de "Total" na tabela de Custos Totais
+  document.getElementById('totalAlimenticios').textContent = totalProdutos.toFixed(2);
+  document.getElementById('totalDivulgacao').textContent = totalDivulgacao.toFixed(2);
+  document.getElementById('custoTotalEvento').textContent = totalEvento.toFixed(2);
+
+  // Exiba um alert com o valor final
+  alert('O custo total do evento é: R$ ' + totalEvento.toFixed(2));
+}
+
+
+
+function enviarDadosPorEmail() {
+    // Adicione aqui o código para montar e enviar os dados por email
 }
