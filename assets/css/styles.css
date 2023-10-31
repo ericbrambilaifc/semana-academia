@@ -434,6 +434,10 @@ select {
     text-align: center;
 }
 
+#cronograma {   
+    display:flex;
+}
+
 
 
 
