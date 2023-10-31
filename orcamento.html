@@ -13,101 +13,106 @@
 </head>
 
 <body>
-    <h1>Calculadora de Orçamento para o Evento SCI</h1>
-    <h2>Dados do Evento</h2>
+    <div class="container clearfix">
+        <div class="top">
+            <h1>Calculadora de Orçamento para o Evento SCI</h1>
+            <h2>Dados do Evento</h2>
 
-    <label for="numeroParticipantes">Número de Participantes</label>
-    <input type="number" id="numeroParticipantes" min="0" required>
-    <button onclick="adicionarParticipante()">Adicionar Participante</button>
-    <p>Número total de participantes: <span id="numeroParticipantesDisplay"><b>0</b></span></p>
+            <label for="numeroParticipantes">Número de Participantes</label>
+            <input type="number" id="numeroParticipantes" min="0" required>
+            <button onclick="adicionarParticipante()">Adicionar Participante</button>
+            <p>Número total de participantes: <span id="numeroParticipantesVizualizacao"><b>0</b></span></p>
+        </div>
 
-    <div class="alimenticios">
-        <h3>Custo de Produtos Alimentícios</h3>
-        <table>
-            <tr>
-                <th>Nome do Produto</th>
-                <th>Quantidade por Participante</th>
-                <th>Preço por Unidade</th>
-                <th>Total</th>
-            </tr>
-            <tr>
-                <td>Café</td>
-                <td><input type="number" id="quantidadeCafe" name="cafe" min="0" required></td>
-                <td><input type="number" id="precoCafe" name="cafe" min="0" required></td>
-                <td><input type="number" id="totalCafe" name="cafe" min="0" required></td>
-            </tr>
-            <tr>
-                <td>Bolo</td>
-                <td><input type="number" id="quantidadeBolo" name="bolo" min="0" required></td>
-                <td><input type="number" id="precoBolo" name="bolo" min="0" required></td>
-                <td><input type="number" id="totalBolo" name="bolo" min="0" required></td>
-            </tr>
-            <tr>
-                <td>Cachorro-Quente</td>
-                <td><input type="number" id="quantidadeCachorro" name="cachorro" min="0" required></td>
-                <td><input type="number" id="precoCachorro" name="cachorro" min="0" required></td>
-                <td><input type="number" id="totalCachorro" name="cachorro" min="0" required></td>
-            </tr>
-        </table>
+        <div class="alimenticios">
+            <h3>Custo de Produtos Alimentícios</h3>
+            <table>
+                <tr>
+                    <th>Nome do Produto</th>
+                    <th>Quantidade por Participante</th>
+                    <th>Preço por Unidade</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Café</td>
+                    <td><input type="number" id="quantidadeCafe" name="cafe" min="0" required></td>
+                    <td><input type="number" id="precoCafe" name="cafe" min="0" required></td>
+                    <td><input type="number" id="totalCafe" name="cafe" min="0" required></td>
+                </tr>
+                <tr>
+                    <td>Bolo</td>
+                    <td><input type="number" id="quantidadeBolo" name="bolo" min="0" required></td>
+                    <td><input type="number" id="precoBolo" name="bolo" min="0" required></td>
+                    <td><input type="number" id="totalBolo" name="bolo" min="0" required></td>
+                </tr>
+                <tr>
+                    <td>Cachorro-Quente</td>
+                    <td><input type="number" id="quantidadeCachorro" name="cachorro" min="0" required></td>
+                    <td><input type="number" id="precoCachorro" name="cachorro" min="0" required></td>
+                    <td><input type="number" id="totalCachorro" name="cachorro" min="0" required></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="divulgacao">
+            <h3>Custos de Divulgação</h3>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantidade por Participante</th>
+                    <th>Preço por Unidade</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Banner</td>
+                    <td><input type="number" id="quantidadeBanner" name="banner" min="0" required></td>
+                    <td><input type="number" id="precoBanner" name="banner" min="0" required></td>
+                    <td><input type="number" id="totalBanner" name="banner" min="0" required></td>
+                </tr>
+                <tr>
+                    <td>Crachá</td>
+                    <td><input type="number" id="quantidadeCracha" name="cracha" min="0" required></td>
+                    <td><input type="number" id="precoCracha" name="cracha" min="0" required></td>
+                    <td><input type="number" id="totalCracha" name="cracha" min="0" required></td>
+                </tr>
+                <tr>
+                    <td>Camiseta</td>
+                    <td><input type="number" id="quantidadeCamiseta" name="camiseta" min="0" required></td>
+                    <td><input type="number" id="precoCamiseta" name="camiseta" min="0" required></td>
+                    <td><input type="number" id="totalCamiseta" name="camiseta" min="0" required></td>
+                </tr>
+            </table>
+
+            <button onclick="dadosGuardados()">Salvar Dados</button> 
+        </div>
+
+        <div class="totais">
+            <h3>Custos Totais</h3>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Produtos Alimentícios</td>
+                    <td id="totalAlimenticios">0</td>
+                </tr>
+                <tr>
+                    <td>Divulgação</td>
+                    <td id="totalDivulgacao">0</td>
+                </tr>
+                <tr>
+                    <td>Custo Total do Evento</td>
+                    <td id="custoTotalEvento">0</td>
+                </tr>
+            </table>
+            <button type="button" onclick="calcularOrcamento()">Calcular Orçamento</button>
+            <textarea name="text" id="text" cols="150" rows="10"></textarea>
+            <button type="button" onclick="enviarDadosPorEmail()">Montar e Enviar Dados por Email</button>
+            <button><a href="index.html">Voltar</a></button>
+        </div>
     </div>
-
-    <div class="divulgacao">
-        <h3>Custos de Divulgação</h3>
-        <table>
-            <tr>
-                <th>Item</th>
-                <th>Quantidade por Participante</th>
-                <th>Preço por Unidade</th>
-                <th>Total</th>
-            </tr>
-            <tr>
-                <td>Banner</td>
-                <td><input type="number" id="quantidadeBanner" name="banner" min="0" required></td>
-                <td><input type="number" id="precoBanner" name="banner" min="0" required></td>
-                <td><input type="number" id="totalBanner" name="banner" min="0" required></td>
-            </tr>
-            <tr>
-                <td>Crachá</td>
-                <td><input type="number" id="quantidadeCracha" name="cracha" min="0" required></td>
-                <td><input type="number" id="precoCracha" name="cracha" min="0" required></td>
-                <td><input type="number" id="totalCracha" name="cracha" min="0" required></td>
-            </tr>
-            <tr>
-                <td>Camiseta</td>
-                <td><input type="number" id="quantidadeCamiseta" name="camiseta" min="0" required></td>
-                <td><input type="number" id="precoCamiseta" name="camiseta" min="0" required></td>
-                <td><input type="number" id="totalCamiseta" name="camiseta" min="0" required></td>
-            </tr>
-        </table>
-
-        <button onclick="salvarDados()">Salvar Dados</button>
-    </div>
-
-    <div class="totais">
-        <h3>Custos Totais</h3>
-        <table>
-            <tr>
-                <th>Tipo</th>
-                <th>Total</th>
-            </tr>
-            <tr>
-                <td>Produtos Alimentícios</td>
-                <td id="totalAlimenticios">0</td>
-            </tr>
-            <tr>
-                <td>Divulgação</td>
-                <td id="totalDivulgacao">0</td>
-            </tr>
-            <tr>
-                <td>Custo Total do Evento</td>
-                <td id="custoTotalEvento">0</td>
-            </tr>
-        </table>
-        <button type="button" onclick="calcularOrcamento()">Calcular Orçamento</button>
-        <textarea name="text" id="text" cols="200" rows="10"></textarea>
-        <button type="button" onclick="enviarDadosPorEmail()">Montar e Enviar Dados por Email</button>
-    </div>
-
+    <div class="ghost"></div>
     <script src="script-orcamento.js"></script>
 </body>
 
