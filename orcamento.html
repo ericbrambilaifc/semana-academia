@@ -1,7 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VII-SCI">
+    <meta name="keywords" content="informática, ifc, computação, semana acadêmica, jogos">
+    <meta name="author" content="Eric Brambila, Izabelly Coser, Kamylla Abraão">
+    <link rel="shortcut icon" href="assets/img/logo sci.png">
+    <link rel="stylesheet" href="">
+    <title>Orçamento</title>
+</head>
     <title>Calculadora de Orçamento para o Evento</title>
 </head>
 
@@ -18,13 +27,27 @@
                 <th>Nome do Produto</th>
                 <th>Quantidade por Participante</th>
                 <th>Preço por Unidade</th>
+                <th>Total</th>
             </tr>
             <tr>
                 <td>Café</td>
-                <td><input type="number" id="quantidade-cafe" min="0" required></td>
-                <td><input type="number" id="preco-cafe" min="0" required></td>
+                <td><input type="number" id="quantidade" min="0" required></td>     <!--o min é usado para nao inserir numeros negativos-->
+                <td><input type="number" id="preco" min="0" required></td>
+                <td><input type="number" id="total-cafe" min="0" required></td>
+
             </tr>
-            <!-- Repita o padrão para bolo e cachorro-quente -->
+            <tr>
+                <td>Bolo</td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+                <td><input type="number" id="preco" min="0" required></td>
+                <td><input type="number" id="total-bolo" min="0" required></td>
+            </tr>
+            <tr>
+                <td>Cachorro-Quente</td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+                <td><input type="number" id="preco" min="0" required></td>
+                <td><input type="number" id="total-cachorro" min="0" required></td>
+            </tr>
         </table>
     </div>
 
@@ -35,35 +58,45 @@
                 <th>Item</th>
                 <th>Quantidade por Participante</th>
                 <th>Preço por Unidade</th>
-            </tr>
-            <tr>
-                <td>Banner</td>
-                <td><input type="number" id="quantidade-banner" min="0" required></td>
-                <td><input type="number" id="preco-banner" min="0" required></td>
-            </tr>
-            <!-- Repita o padrão para crachá e camiseta -->
-        </table>
-
-        <button type="button" id="salvar-dados">Salvar Dados</button>
-    </div>
-
-    <div class="totais">
-        <h3>Custos Totais</h3>
-
-        <table>
-            <tr>
-                <th>Tipo</th>
                 <th>Total</th>
             </tr>
             <tr>
-                <td>Produtos Alimentícios</td>
+                <td>Banner</td>
+                <td><input type="number" id="banner" min="0" required></td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+            </tr>
+            <tr>
+                <td>Crachá</td>
+                <td><input type="numer" id="cracha" min="0" required></td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+            </tr>
+            <tr>
+                <td>Camiseta</td>
+                <td><input type="numer" id="camiseta" min="0" required></td>
+                <td><input type="number" id="quantidade" min="0" required></td>
+            </tr>
+        </table>
+
+        <button type="submit">Salvar Dados</button>
+    </div>
+
+    <div class="totais">    
+        <h3>Custos Totais</h3>
+
+        <table> 
+            <tr>    
+                <th>Tipo</th>
+                <th>Total</th>
+            </tr>
+            <tr>    
+                <td>Produtos Alimenticios</td>
                 <td>Divulgação</td>
                 <td>Custo Total do Evento</td>
             </tr>
         </table>
-        <button type="button" id="calcular-orcamento">Calcular Orçamento</button>
+        <button type="submit">Calcular Orçamento</button>
         <textarea name="text" id="text" cols="30" rows="10"></textarea>
-        <button type="button">Montar e Enviar Dados por Email</button>
+        <button type="submit">Montar e Eviar Dados por Email</button>
     </div>
 
     <script src="script-orcamento.js"></script>
