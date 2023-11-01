@@ -74,14 +74,9 @@ function calcularTotal(quantidade, preco, total) {
     totalInput.value = total;
   });
 
-  // O seguinte trecho não é necessário (comentado)
-  // const quantidade = parseFloat(quantidadeInput.value) || 0;
-  // const preco = parseFloat(precoInput.value) || 0;
-  // const total = quantidade * preco;
-  // totalInput.value = total;
 }
 
-// Chama a função para calcular o total para cada item da tabela
+// função para calcular o total para cada item da tabela
 calcularTotal('quantidadeCafe', 'precoCafe', 'totalCafe');
 calcularTotal('quantidadeBolo', 'precoBolo', 'totalBolo');
 calcularTotal('quantidadeCachorro', 'precoCachorro', 'totalCachorro');
@@ -92,7 +87,7 @@ calcularTotal('quantidadeCamiseta', 'precoCamiseta', 'totalCamiseta');
 
 //salvar os dados
 
-// Crie um array vazio para armazenar os dados
+// cria um array vazio para armazenar os dados
 const dadosGuardados = [];
 
 function adicionarParticipante() {
@@ -157,7 +152,6 @@ function calcularOrcamento() {
     const novoTotal = quantidade * preco;
     totalInput.value = novoTotal;
 
-    // Chame a função para calcular e atualizar os totais
     calcularTotais();
   });
 
@@ -167,7 +161,6 @@ function calcularOrcamento() {
     const novoTotal = quantidade * preco;
     totalInput.value = novoTotal;
 
-    // Chame a função para calcular e atualizar os totais
     calcularTotais();
   });
 }
@@ -179,25 +172,24 @@ function calcularTotais() {
   let totalProdutos = 0;
   let totalDivulgacao = 0;
 
-  // Calcule o total para os produtos alimentícios
   totaisProdutos.forEach((total) => {
     totalProdutos += parseFloat(document.getElementById(total).value) || 0;
   });
 
-  // Calcule o total para os custos de divulgação
   totaisDivulgacao.forEach((total) => {
     totalDivulgacao += parseFloat(document.getElementById(total).value) || 0;
   });
 
   const totalEvento = totalProdutos + totalDivulgacao;
 
-  // Atualize os campos de "Total" na tabela de Custos Totais
+//custo total
+
   document.getElementById('totalAlimenticios').textContent = totalProdutos.toFixed(2);
   document.getElementById('totalDivulgacao').textContent = totalDivulgacao.toFixed(2);
   document.getElementById('custoTotalEvento').textContent = totalEvento.toFixed(2);
 }
 
-// Chame a função para calcular o total para cada item da tabela
+// chama a função para calcular o total para cada item da tabela
 calcularTotal('quantidadeCafe', 'precoCafe', 'totalCafe');
 calcularTotal('quantidadeBolo', 'precoBolo', 'totalBolo');
 calcularTotal('quantidadeCachorro', 'precoCachorro', 'totalCachorro');
@@ -205,7 +197,7 @@ calcularTotal('quantidadeBanner', 'precoBanner', 'totalBanner');
 calcularTotal('quantidadeCracha', 'precoCracha', 'totalCracha');
 calcularTotal('quantidadeCamiseta', 'precoCamiseta', 'totalCamiseta');
 
-// Chame a função para calcular e atualizar os totais iniciais
+//atuliza os totais
 calcularTotais();
 
 }
@@ -219,19 +211,17 @@ function calcularTotais() {
   let totalProdutos = 0;
   let totalDivulgacao = 0;
 
-  // Calcule o total para os produtos alimentícios
   totaisProdutos.forEach((total) => {
     totalProdutos += parseFloat(document.getElementById(total).value) || 0;
   });
 
-  // Calcule o total para os custos de divulgação
   totaisDivulgacao.forEach((total) => {
     totalDivulgacao += parseFloat(document.getElementById(total).value) || 0;
   });
 
   const totalEvento = totalProdutos + totalDivulgacao;
 
-  // Atualize os campos de "Total" na tabela de Custos Totais
+  // atualiza os campos total na tabela de Custos Totais
   document.getElementById('totalAlimenticios').textContent = totalProdutos.toFixed(2);
   document.getElementById('totalDivulgacao').textContent = totalDivulgacao.toFixed(2);
   document.getElementById('custoTotalEvento').textContent = totalEvento.toFixed(2);

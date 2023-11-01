@@ -231,9 +231,11 @@ nav ul#menu li:hover {
 .acessar {
     background-color: var(--white);
     color: var(--shadow);
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 20px;
+}
 
+.btn {  
+    color: var(--blue)
 }
 
 h1 {
@@ -286,10 +288,13 @@ footer {
     padding-top: 40px;
     color: var(--white);
     background-color: var(--blue);
-    padding-bottom: 200px;
+    padding-bottom: 5rem;
     text-align: center;
     font-size: 30px;
 }
+
+
+
 .cronograma h1 {
     padding-bottom: 50px;
 }
@@ -300,18 +305,30 @@ footer {
     color: var(--shadow);
     border-radius: 10px;
     font-size: 18px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 180px ;
+    padding: 10px 0;
+    width: 180px;
+    
+}
+
+.alight {  
+    text-align: left;
+    margin-top: 20px;
 }
 
  .dia {
     font-size: 15px;
     color: var(--shadow);
-    background-color: var(--dark);
+    background-color: var(--grey);
     width: 280px;
-    padding-right: 20px;
     border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+    padding-top: 18px;
+    
  }
 
  .navs {
@@ -435,7 +452,10 @@ select {
 
 #cronograma {   
     display:flex;
+    justify-content: center;
 }
+
+
 
 
 
