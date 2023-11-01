@@ -99,13 +99,15 @@
                     <td id="custoTotalEvento">0</td>
                 </tr>
             </table>
-            <button type="button" onclick="calcularTotais()">Calcular Orçamento</button>
+            <button onclick="calcularTotais()">Calcular Orçamento</button>
+
             <textarea id="dadosGuardadosDisplay" cols="150" rows="10"></textarea>
-            <button type="button" onclick="enviarDadosPorEmail()">Montar e Enviar Dados por Email</button>
+            <button type="button" onclick="enviarDadosPorEmail()">Enviar Dados por Email</button>
             <button><a href="index.html">Voltar</a></button>
         </div>
     </div>
     <div class="ghost"></div>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script-orcamento.js"></script>
 </body>
 </html>

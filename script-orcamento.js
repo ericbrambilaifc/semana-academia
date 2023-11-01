@@ -237,11 +237,66 @@ function calcularTotais() {
   document.getElementById('custoTotalEvento').textContent = totalEvento.toFixed(2);
 
   // Exiba um alert com o valor final
-  alert('O custo total do evento é: R$ ' + totalEvento.toFixed(2));
+  alert('O custo total será de: R$ ' + totalEvento.toFixed(2));
 }
 
+//--------------------------------------------
 
 
+//email
+
+function montarTexto() {
+  const produtos = ['Cafe', 'Bolo', 'Cachorro', 'Banner', 'Cracha', 'Camiseta'];
+  let texto = 'Resumo dos Dados:\n';
+
+  produtos.forEach((produto) => {
+      const quantidade = parseFloat(document.getElementById(`quantidade${produto}`).value) || 0;
+      const preco = parseFloat(document.getElementById(`preco${produto}`).value) || 0;
+      const total = quantidade * preco;
+
+      texto += `Produto: ${produto}\n`;
+      texto += `Quantidade: ${quantidade}\n`;
+      texto += `Preço: ${preco}\n`;
+      texto += `Total: ${total}\n\n`;
+  });
+
+  return texto;
+}
+
+function adicionarDados() {
+  const textarea = document.querySelector('textarea');
+  const textoMontado = montarTexto();
+  textarea.textContent = textoMontado;
+}
+
+//-------------------
+
+
+
+
+emailjs.init('fOjpGdA5EHtRRR878');
+
+// Função para enviar o email
 function enviarDadosPorEmail() {
-    // Adicione aqui o código para montar e enviar os dados por email
+  const dadosGuardadosDisplay = document.getElementById('dadosGuardadosDisplay');
+  const conteudoDoTextarea = dadosGuardadosDisplay.value;
+
+  emailjs.send('service_gw7fpdq', 'template_kux8vc8', {
+    message: conteudoDoTextarea,
+  })
+    .then(function (response) {
+      console.log('Email enviado com sucesso', response);
+    })
+    .catch(function (error) {
+      console.error('Erro ao enviar o email', error);
+    });
 }
+
+
+const botaoEnviarEmail = document.getElementById('enviarEmailButton');
+botaoEnviarEmail.addEventListener('click', enviarDadosPorEmail);
+
+
+
+
+
