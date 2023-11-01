@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/orcamento.css">
     <title>Calculadora de Orçamento para o Evento</title>
 </head>
+
 <body>
     <div class="container clearfix">
         <div class="top">
@@ -100,9 +102,10 @@
                 </tr>
             </table>
             <button onclick="calcularTotais()">Calcular Orçamento</button>
-
-            <textarea id="dadosGuardadosDisplay" cols="150" rows="10"></textarea>
-            <button type="button" onclick="enviarDadosPorEmail()">Enviar Dados por Email</button>
+            <form action="https://app.headlessforms.cloud/api/v1/form-submission/nkJtA1ewcj">
+                <textarea id="dadosGuardadosDisplay" cols="150" rows="10"></textarea>
+                <button type="button" onclick="enviarDadosPorEmail()">Enviar Dados por Email</button>
+            </form> 
             <button><a href="index.html">Voltar</a></button>
         </div>
     </div>
@@ -110,4 +113,5 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script-orcamento.js"></script>
 </body>
+
 </html>

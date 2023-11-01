@@ -264,28 +264,6 @@ function adicionarDados() {
 
 
 
-emailjs.init('fOjpGdA5EHtRRR878');
-
-// Função para enviar o email
-function enviarDadosPorEmail() {
-  const dadosGuardadosDisplay = document.getElementById('dadosGuardadosDisplay');
-  const conteudoDoTextarea = dadosGuardadosDisplay.value;
-
-  emailjs.send('service_gw7fpdq', 'template_kux8vc8', {
-    message: conteudoDoTextarea,
-  })
-    .then(function (response) {
-      console.log('Email enviado com sucesso', response);
-    })
-    .catch(function (error) {
-      console.error('Erro ao enviar o email', error);
-    });
-}
-
-
-const botaoEnviarEmail = document.getElementById('enviarEmailButton');
-botaoEnviarEmail.addEventListener('click', enviarDadosPorEmail);
-
 
 
 
