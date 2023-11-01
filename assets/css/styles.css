@@ -4,6 +4,7 @@
 :root {
     --shadow: #97cadb;
     --grey: #e7e7e7d5;
+    --dark: #575555a1;
     --white: #f0f0f0;
     --blue: #97cadbce;
     --fonte-principal: 'Poppins';
@@ -12,6 +13,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -306,7 +308,7 @@ footer {
  .dia {
     font-size: 15px;
     color: var(--shadow);
-    background-color: var(--grey);
+    background-color: var(--dark);
     width: 280px;
     padding-right: 20px;
     border-radius: 10px;
